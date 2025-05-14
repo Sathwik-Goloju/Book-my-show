@@ -22,7 +22,7 @@ public class AppUser {
     String password;
     @Column(unique = true)
     String phoneNumber;
-    int pincode;
+    int pinCode;
     String address;
     String userType;
 

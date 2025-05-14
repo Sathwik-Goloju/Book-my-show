@@ -6,22 +6,18 @@ import lombok.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Theaters")
+@Table(name = "halls")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Theaters {
+public class Hall {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    UUID Id;
-    String address;
-    int pinCode;
-    String state;
+    UUID id;
     String name;
+    int capacity;
     @ManyToOne
-    AppUser owner;  //owner = appUser
-
-
+    Theaters theaters;
 }

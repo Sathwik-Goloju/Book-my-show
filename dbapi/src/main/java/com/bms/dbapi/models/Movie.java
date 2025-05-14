@@ -6,22 +6,23 @@ import lombok.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Theaters")
+@Table(name = "movies")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Theaters {
+public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    UUID Id;
-    String address;
-    int pinCode;
-    String state;
+    UUID id;
     String name;
+    Double duration;  // in hrs
+    Boolean isReleased;
     @ManyToOne
-    AppUser owner;  //owner = appUser
-
+    AppUser movieOwner;
+    int review;
+    int totalRatingsVotes;
+    String language;
 
 }
